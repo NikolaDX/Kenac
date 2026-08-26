@@ -46,4 +46,28 @@ export function initLightbox() {
     if (e.key === 'ArrowLeft') showImage(-1);
     if (e.key === 'ArrowRight') showImage(1);
   });
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const SWIPE_THRESHOLD = 50;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const distance = touchEndX - touchStartX;
+    if (Math.abs(distance) < SWIPE_THRESHOLD) return;
+
+    if (distance < 0) {
+      showImage(1);
+    } else {
+      showImage(-1);
+    }
+  }
 }
