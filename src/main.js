@@ -1,5 +1,7 @@
 import './style.css'
-import { initLightbox } from './lightbox.js';
+import { initLightbox } from './scripts/lightbox.js';
+import { initScrollAnimations } from './scripts/animations.js';
+import { initLoadingScreen } from "./scripts/loading.js";
 
 const btn = document.getElementById("menuBtn")
 const menu = document.getElementById("mobileMenu")
@@ -8,8 +10,6 @@ const menuLinks = menu.querySelectorAll("a")
 const line1 = document.getElementById("line1")
 const line2 = document.getElementById("line2")
 const line3 = document.getElementById("line3")
-
-initLightbox();
 
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header')
@@ -52,3 +52,6 @@ function toggleMenu() {
   menu.classList.toggle("opacity-100")
 }
 
+initScrollAnimations();
+initLightbox();
+initLoadingScreen();

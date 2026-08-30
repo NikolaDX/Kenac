@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="icon" type="image/png" href="./favicon.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,15 +13,24 @@
     <title>Restoran Kenac</title>
   </head>
   <body>
+    <div id="loading-screen">
+      <div class="loading-content">
+        <img src="./assets/logo.webp" alt="Kenac" class="loading-logo" />
+
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+      </div>
+    </div>
+
     <header class="fixed top-0 left-0 w-full z-50 glass">
       <div
-        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+        class="max-w-7xl mx-auto px-6 py-1 flex items-center justify-between"
       >
-        <!-- <h1 class="text-2xl font-bold gold-text">Restoran Kenac</h1> -->
         <a href="#home">
           <img
             class="size-20 rounded-md object-cover"
-            src="./assets/logo.png"
+            src="./assets/logo.webp"
             alt="Restoran Kenac"
           />
         </a>
@@ -111,42 +120,71 @@
       class="relative min-h-screen flex items-center justify-center"
     >
       <img
-        src="./assets/glavni_sto_2.png"
+        src="./assets/glavni_sto_2.webp"
         class="absolute inset-0 w-full h-full object-cover"
         alt="Restaurant"
       />
 
       <div class="absolute inset-0 hero-overlay"></div>
 
-      <div class="relative z-10 text-center px-6">
+      <div class="relative mx-auto px-6 text-center">
         <img
-          class="size-lg"
-          src="./assets/logo.png"
+          class="relative mx-auto w-[80vw] max-w-100 h-auto reveal"
+          src="./assets/logo.webp"
           alt="Logo restorana Kenac"
         />
 
-        <p class="max-w-2xl mx-auto text-gray-300 text-lg mb-8 font-bold">
-          Restoran koji obećava vrhunsku uslugu i nezaboravno iskustvo.
+        <p
+          class="max-w-2xl mx-auto text-gray-300 text-lg mb-8 font-bold reveal"
+        >
+          Mesto gde se posebni trenuci pretvaraju u uspomene.
         </p>
       </div>
     </section>
 
     <section id="about" class="py-32 px-6">
       <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <div>
+        <div class="reveal-left">
           <p class="gold-text text-4xl font-bold mb-4">O nama</p>
 
-          <p class="text-gray-400 leadinng-8 mb-6 font-bold">
-            Restoran za sve vrste proslava.<br />
-            Mesto u kome se stvaraju najlepše uspomene.<br />
-            Spoj vrhunske hrane i nezaboravne zabave.<br />
-            Rezervišite svoj termin na vreme!
+          <p class="text-gray-400 text-justify leadinng-8 mb-6 font-bold">
+            Bilo da organizujete venčanje, krštenje, rođendan, punoletstvo,
+            poslovni događaj ili porodično okupljanje - tu smo da zajedno
+            osmislimo i realizujemo svaki detalj.<br /><br />
+
+            Od dekoracije i postavljanja prostora, preko odličnog menija i
+            keteringa, do fotografisanja i video produkcije - kod nas dobijate
+            kompletnu organizaciju proslave na jednom mestu.<br /><br />
+
+            Na raspolaganju su vam dve svečane sale - velika sala za do 280
+            gostiju i manja, prijatna sala za do 110 gostiju. Ako planirate
+            manje okupljanje, tu je i naš najprijatniji kutak, idealan za
+            svečane večere, porodična druženja i manje proslave, dostupan svakog
+            dana.<br /><br />
+
+            Naš porodični posao negujemo od 2012. godine, uz mnogo iskustva,
+            tradicije i ljubavi prema ugostiteljstvu. Posebno vodimo računa o
+            kvalitetu namirnica - na našim stolovima su domaći delikatesi iz
+            naše sušare, kao i sveže povrće iz našeg domaćinstva. Verujemo da se
+            dobar ukus prepoznaje po kvalitetnim i pažljivo biranim
+            namirnicama.<br /><br />
+
+            Uz našu porodicu, svaki događaj stvaraju i sertifikovani
+            profesionalci iz različitih oblasti ugostiteljstva - koktel
+            majstori, event majstori, iskusni konobari i kuvari. Zajedno smo tim
+            koji vodi računa o svakom detalju i trudi se da svaka proslava prođe
+            na najbolji mogući način.<br /><br />
+
+            <span class="gold-text"
+              >Vaša želja nam je inspiracija, a svaki događaj prilika da zajedno
+              napravimo uspomenu za pamćenje.<br /><br
+            /></span>
           </p>
         </div>
 
         <img
-          src="./assets/sto_1.jpg"
-          class="rounded-2xl shadow-2xl"
+          src="./assets/IMG_1425.webp"
+          class="rounded-2xl shadow-2xl reveal-right"
           alt="Interior"
         />
       </div>
@@ -158,43 +196,62 @@
           <p class="gold-text text-4xl font-bold mb-4">Galerija</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6" id="gallery-grid">
-          <img
-            src="./assets/slika_1.jpg"
-            class="gallery-img rounded-2xl h-96 w-full object-cover hover:scale-105 transition duration-500"
-            alt="Gallery"
-          />
+        <photo-gallery
+          class="reveal"
+          title="Dekoracije"
+          description="Kod nas možete odabrati dekoraciju za sve vrste proslava, ketering po vašoj meri."
+        >
+          <img src="./assets/dekoracije/476A1333.webp" alt="Dekoracija" />
+          <img src="./assets/dekoracije/DSC08511.webp" alt="Dekoracija" />
+          <img src="./assets/dekoracije/DSC01717.webp" alt="Dekoracija" />
+          <img src="./assets/dekoracije/DSC02088.webp" alt="Dekoracija" />
+          <img src="./assets/dekoracije/DSC06070.webp" alt="Dekoracija" />
+          <img src="./assets/dekoracije/DSC08090.webp" alt="Dekoracija" />
+        </photo-gallery>
 
-          <img
-            src="./assets/slika_2.jpg"
-            class="gallery-img rounded-2xl h-96 w-full object-cover hover:scale-105 transition duration-500"
-            alt="Gallery"
-          />
+        <photo-gallery
+          class="reveal"
+          title="Meni"
+          description="Izdvajaju nas domaći delikatesi, vrhunski ukusi i pažljivo odabran svaki komad mesa za vaše glavno jelo."
+        >
+          <img src="./assets/meni/476A5274.webp" alt="Meni" />
+          <img src="./assets/meni/476A5313.webp" alt="Meni" />
+          <img src="./assets/meni/476A5323.webp" alt="Meni" />
+          <img src="./assets/meni/476A5340.webp" alt="Meni" />
+          <img src="./assets/meni/476A5351.webp" alt="Meni" />
+          <img src="./assets/meni/476A5311.webp" alt="Meni" />
+        </photo-gallery>
 
-          <img
-            src="./assets/slika_3.jpg"
-            class="gallery-img rounded-2xl h-96 w-full object-cover hover:scale-105 transition duration-500"
-            alt="Gallery"
-          />
+        <photo-gallery
+          class="reveal"
+          title="Ketering"
+          description="Radimo ketering i švedske stolove za sve vrste proslava."
+        >
+          <img src="./assets/ketering/DSC03397.webp" alt="Ketering" />
+          <img src="./assets/ketering/DSC03412.webp" alt="Ketering" />
+          <img src="./assets/ketering/DSC03415.webp" alt="Ketering" />
+          <img src="./assets/ketering/DSC03419.webp" alt="Ketering" />
+          <img src="./assets/ketering/DSC09947.webp" alt="Ketering" />
+          <img src="./assets/ketering/DSC09961.webp" alt="Ketering" />
+        </photo-gallery>
 
-          <img
-            src="./assets/slika_4.jpg"
-            class="gallery-img rounded-2xl h-96 w-full object-cover hover:scale-105 transition duration-500"
-            alt="Gallery"
-          />
+        <!-- <photo-gallery
+          title="Scenski efekti i kokteli"
+          description="Vatrometi, roto-cvet, balončići, šampanjac fontana, kokteli..."
+        >
+          <img src="./assets/scenski_efekti/DSC01676.JPG" alt="ScenskiEfekti">
+          <img src="./assets/scenski_efekti/DSC03412.JPG" alt="ScenskiEfekti">
+          <img src="./assets/scenski_efekti/DSC03415.JPG" alt="ScenskiEfekti">
+          <img src="./assets/scenski_efekti/DSC03419.JPG" alt="ScenskiEfekti">
+          <img src="./assets/scenski_efekti/DSC09947.JPG" alt="ScenskiEfekti">
+          <img src="./assets/scenski_efekti/DSC09961.JPG" alt="ScenskiEfekti">
+        </photo-gallery> -->
 
-          <img
-            src="./assets/slika_7.webp"
-            class="gallery-img rounded-2xl h-96 w-full object-cover hover:scale-105 transition duration-500"
-            alt="Gallery"
-          />
-
-          <img
-            src="./assets/slika_6.webp"
-            class="gallery-img rounded-2xl h-96 w-full object-cover hover:scale-105 transition duration-500"
-            alt="Gallery"
-          />
-        </div>
+        <!-- <photo-gallery
+          title="Fotografisanje i video"
+          description="Iskusan tim naših fotografa će beležiti osmehe, emocije i najlepše detalje vaše proslave."
+          images=["./assets/dekoracije/476A1333.JPG","","","","",""]>
+        </photo-gallery> -->
       </div>
     </section>
 
@@ -277,99 +334,20 @@
         </p>
 
         <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center pt-3">
-          <div class="space-y-8">
-            <a href="tel:+3498239042" class="flex items-center gap-5 group">
-              <span
-                class="flex-shrink-0 size-12 rounded-full border border-current gold-text flex items-center justify-center transition-colors group-hover:bg-current/10"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              <div class="text-left">
-                <p class="text-xs uppercase tracking-wider text-white/40 mb-1">
-                  Telefon
-                </p>
-                <p
-                  class="text-white/90 group-hover:text-white transition-colors"
-                >
-                  +381 69 4454 900
-                </p>
-              </div>
-            </a>
-
-            <a
-              href="mailto:restaurant@gmail.com"
-              class="flex items-center gap-5 group"
-            >
-              <span
-                class="flex-shrink-0 size-12 rounded-full border border-current gold-text flex items-center justify-center transition-colors group-hover:bg-current/10"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"
-                  />
-                  <path
-                    d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"
-                  />
-                </svg>
-              </span>
-              <div class="text-left">
-                <p class="text-xs uppercase tracking-wider text-white/40 mb-1">
-                  Email
-                </p>
-                <p
-                  class="text-white/90 group-hover:text-white transition-colors"
-                >
-                  restorankenac@gmail.com
-                </p>
-              </div>
-            </a>
-
-            <div class="flex items-center gap-5">
-              <span
-                class="flex-shrink-0 size-12 rounded-full border border-current gold-text flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              <div class="text-left">
-                <p class="text-xs uppercase tracking-wider text-white/40 mb-1">
-                  Adresa
-                </p>
-                <p class="text-white/90">Pejkovac 18413</p>
-              </div>
-            </div>
-          </div>
+          <contact-info
+            class="reveal-left"
+            phone="+381 69 4454 900"
+            email="restorankenac@gmail.com"
+            address="Pejkovac 18413"
+            instagram="https://www.instagram.com/restoran__kenac/"
+            facebook="https://www.facebook.com/p/Restoran-KENAC-100064042473308/"
+          ></contact-info>
 
           <div
             class="rounded-lg overflow-hidden border border-white/10 shadow-2xl"
           >
             <iframe
+              class="reveal-right"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2850.5295859891007!2d21.729410199999997!3d43.223895899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4755bfa1ca364b0d%3A0xdb8dc3b5e8778894!2sRestoran%20Kenac!5e1!3m2!1sen!2srs!4v1787769679869!5m2!1sen!2srs"
               width="100%"
               height="320"
@@ -388,5 +366,7 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/scripts/photogallery.js"></script>
+    <script type="module" src="/src/scripts/contact-info.js"></script>
   </body>
 </html>
